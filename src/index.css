@@ -25,5 +25,5 @@ input:-webkit-autofill:active {
 }
 
 .Mui-focused fieldset {
-  border-color: var(--purpule) !important;
+  border-color: var(--yellow) !important;
 }
