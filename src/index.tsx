@@ -1,21 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import { store } from './app/store';
+import Routers from 'routers';
+import { render } from 'react-dom';
+import { StrictMode } from 'react';
 import { Provider } from 'react-redux';
+import { store } from 'services/redux';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+import CssBaseline from '@mui/material/CssBaseline';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-ReactDOM.render(
-  <React.StrictMode>
+const queryClient = new QueryClient();
+const theme: any = createTheme({
+  typography: { button: { textTransform: 'none' } },
+});
+
+render(
+  <StrictMode>
     <Provider store={store}>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <Routers />
+          </BrowserRouter>
+          <CssBaseline />
+          <ToastContainer />
+        </ThemeProvider>
+      </QueryClientProvider>
     </Provider>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
