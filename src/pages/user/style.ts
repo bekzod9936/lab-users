@@ -69,3 +69,13 @@ export const WrapSinner = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const WrapNotFound = styled.div`
+  width: 100%;
+  display: flex;
+  font-weight: bold;
+  margin: 20px 0;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+`;

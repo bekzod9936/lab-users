@@ -7,9 +7,9 @@ const NotFoundPage = () => {
     <Container>
       <Wrapper>
         <Title>404</Title>
-        <SubTitle>Topa olmadik...</SubTitle>
-        <Text>Siz qidirayotgan sahifa mavjud emas.</Text>
-        <LinkBack to={back}>ORTGA QAYTISH</LinkBack>
+        <SubTitle>We couldn't find it ...</SubTitle>
+        <Text>The page you are looking for does not exist.</Text>
+        <LinkBack to={back}>Go Back</LinkBack>
       </Wrapper>
     </Container>
   );

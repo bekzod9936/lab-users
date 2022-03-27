@@ -1,5 +1,7 @@
 import useUser from './useUser';
 import defuser from 'assets/defuser.svg';
+import Spinner from 'components/Spinner';
+import { useAppSelector } from 'services/redux/hooks';
 import {
   Img,
   UserInfo,
@@ -9,12 +11,11 @@ import {
   LinkBack,
   Container,
   WrapSinner,
+  WrapNotFound,
 } from './style';
-import { useAppSelector } from 'services/redux/hooks';
-import Spinner from 'components/Spinner';
 
 const User = () => {
-  const { isLoading } = useUser();
+  const { isLoading, isError } = useUser();
   const { user } = useAppSelector((state) => state.users);
   const { avatar, first_name, last_name, email } = user;
 
@@ -22,6 +23,11 @@ const User = () => {
     <WrapSinner>
       <Spinner />
     </WrapSinner>
+  ) : isError ? (
+    <WrapNotFound>
+      not found user
+      <LinkBack to="/">Go Back</LinkBack>
+    </WrapNotFound>
   ) : (
     <Container>
       <Header>
