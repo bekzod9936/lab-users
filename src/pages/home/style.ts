@@ -20,9 +20,9 @@ export const Wrap = styled.div`
 
 export const WrapContent = styled.div`
   width: 100%;
-  height: 100%;
   display: grid;
   grid-gap: 30px;
+  margin-bottom: 20px;
   grid-template-columns: repeat(3, minmax(30%, 1fr));
   @media (max-width: ${device.mobile}) {
     grid-template-columns: minmax(100%, 1fr);

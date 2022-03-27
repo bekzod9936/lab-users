@@ -30,12 +30,12 @@ const Home = () => {
               {users.map((user: IDataUsers) => (
                 <Card key={user.id} value={user} />
               ))}
-              <Pagination
-                page={page}
-                count={total_pages}
-                onChange={handlePageChange}
-              />
             </WrapContent>
+            <Pagination
+              page={page}
+              count={total_pages}
+              onChange={handlePageChange}
+            />
           </Wrap>
         </>
       )}

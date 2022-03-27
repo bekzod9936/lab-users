@@ -9,6 +9,7 @@ export const CardWrap = styled.div`
   margin: 0 auto;
   overflow: hidden;
   min-height: 280px;
+  max-height: 280px;
   border-radius: 6px;
   background: #ffffff;
   flex-direction: column;
